@@ -1,12 +1,41 @@
 body {
   font-family: Arial, sans-serif;
 }
-.weather-app {
+.weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
+}
+.coded-by {
+  text-align: center;
+}
+.weather-app-wrapper #valagala {
+  text-decoration: none;
+}
+.weather-app {
   padding: 20px;
   border: 1px solid grey;
   border-radius: 7px;
+}
+.overview {
+  margin: bottom 20px;
+}
+.weather-temperature img {
+  margin-right: 5px;
+  width: 64px;
+  height: 64px;
+}
+.weather-temperature strong {
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+  color: rgb(33, 33, 33);
+}
+.weather-temperature .units {
+  position: relative;
+  top: -34px;
+}
+#fahrenheit {
+  text-decoration: none;
 }
 h1 {
   font-size: 24px;
