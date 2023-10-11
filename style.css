@@ -48,13 +48,20 @@ ul {
   margin: 0;
   padding: 0;
 }
+#description {
+  text-transform: capitalize;
+}
 li {
   margin: 0;
   padding: 0;
   list-style: none;
+
   font-size: 16px;
   line-height: 20px;
   font-weight: 100;
   color: grey;
   opacity: 0.8;
+}
+#wind {
+  text-transform: lowercase;
 }
