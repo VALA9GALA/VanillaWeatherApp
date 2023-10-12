@@ -1,8 +1,3 @@
-window.onload = function () {
-  formatDate(timestamp);
-  displayTemperature(response);
-};
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
