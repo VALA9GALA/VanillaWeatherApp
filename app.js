@@ -24,7 +24,6 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
-  console.log(response.data.condition.icon_url);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
   let dateElement = document.querySelector("#date");
@@ -38,6 +37,7 @@ function displayTemperature(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  mainIconElement.setAttribute("alt", response.data.condition.description);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
   let windElement = document.querySelector("#wind");
