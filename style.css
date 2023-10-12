@@ -48,6 +48,9 @@ ul {
   margin: 0;
   padding: 0;
 }
+#letter-l {
+  text-transform: capitalize;
+}
 #description {
   text-transform: capitalize;
 }
