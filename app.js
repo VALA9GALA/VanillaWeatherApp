@@ -1,6 +1,6 @@
 window.onload = function () {
-  formatDate();
-  displayTemperature();
+  formatDate(timestamp);
+  displayTemperature(response);
 };
 
 function formatDate(timestamp) {
