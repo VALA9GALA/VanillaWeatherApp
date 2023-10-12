@@ -24,7 +24,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
-  console.log(response.data.time / 1000);
+  console.log(response.data.condition.icon_url);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
   let dateElement = document.querySelector("#date");
@@ -33,6 +33,8 @@ function displayTemperature(response) {
   mainTempElement.innerHTML = Math.round(response.data.temperature.current);
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
+  let mainIconElement = document.querySelector("#main-icon");
+  mainIconElement.innerHTML = response.data.condition.icon_url;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
   let windElement = document.querySelector("#wind");
