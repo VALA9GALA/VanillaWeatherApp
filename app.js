@@ -44,11 +44,21 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
 }
 
-let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
-let query = "Brooklyn";
-let apiKey = "045ace03oteb7d0da03b1286fde00d59";
-let units = "metric";
-let apiUrl = `${apiEndpoint}query=${query}&key=${apiKey}&units=${units}`;
+function search(city) {
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
+  let apiKey = "045ace03oteb7d0da03b1286fde00d59";
+  let units = "metric";
+  let apiUrl = `${apiEndpoint}query=${city}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Brooklyn");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

@@ -1,38 +1,108 @@
 body {
+  background-color: pink;
   font-family: Arial, sans-serif;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/419/original/into-column.gif?1697229223);
+  background-repeat: no-repeat;
+  background-size: 890px;
+  background-position: 200px;
 }
+#love-eyes {
+  width: 360px;
+  position: absolute;
+  top: 240px;
+  left: 20px;
+}
+#love-eyes:hover {
+  transform: scale(0.5);
+  transition: 300ms ease-in-out;
+}
+#column {
+  height: 390px;
+  position: absolute;
+  top: 240px;
+  left: 380px;
+}
+#look-head {
+  width: 300px;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+}
+#look-head:hover {
+  transform: scale(1.2) rotate(-360deg);
+  transition: 350ms ease-in-out;
+}
+
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
 }
 .coded-by {
-  text-align: center;
+  opacity: 0.8;
+  position: absolute;
+  margin: 0 190px;
 }
 .weather-app-wrapper #valagala {
   text-decoration: none;
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 2px;
+  color: #752eaa;
 }
 .weather-app {
+  /*background: rgba(219, 99, 195, 0.74);
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(219, 99, 195, 0.74) 0%,
+    rgba(50, 224, 227, 0.71) 50%,
+    rgba(181, 171, 222, 0.5) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(219, 99, 195, 0.74) 0%,
+    rgba(50, 224, 227, 0.71) 50%,
+    rgba(181, 171, 222, 0.5) 100%
+  );*/
+  background: #eeeeee;
+  background: -webkit-radial-gradient(
+    circle,
+    #eeeeee 0%,
+    #db51cf 50%,
+    #d7d7d7 100%
+  );
+  background: radial-gradient(circle, #eeeeee 0%, #db51cf 50%, #d7d7d7 100%);
   padding: 20px;
-  border: 1px solid grey;
+  border: 1px solid rgb(98, 74, 186);
   border-radius: 7px;
+  box-shadow: 2px 4px 6px 2px rgba(98, 74, 186, 0.5);
 }
 .overview {
   margin: bottom 20px;
 }
+/*.form-control {
+  width: 350px;
+}*/
+#search-btn {
+  background-color: #b462c9;
+  border: #9b44b0;
+  color: azure;
+  box-shadow: 2px 4px 6px 2px rgba(98, 74, 186, 0.5);
+}
 #main-icon {
   margin-right: 5px;
-  width: 75px;
-  height: 75px;
+  margin-top: -15px;
+  width: 90px;
 }
 #main-icon:hover {
-  transform: scale(1.5);
+  transform: scale(1.4);
   transition: 200ms ease-in-out;
 }
 .weather-temperature strong {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
-  color: rgb(33, 33, 33);
+  color: rgb(98, 74, 186);
+  opacity: 0.9;
 }
 .weather-temperature .units {
   position: relative;
@@ -44,8 +114,9 @@ body {
 h1 {
   font-size: 24px;
   line-height: 28px;
-  font-weight: 100;
-  color: grey;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgb(98, 74, 186);
   margin-bottom: 0;
 }
 ul {
@@ -63,8 +134,8 @@ li {
   font-size: 16px;
   line-height: 20px;
   font-weight: 100;
-  color: grey;
-  opacity: 0.8;
+  color: rgb(98, 74, 186);
+  opacity: 0.9;
 }
 #wind {
   text-transform: lowercase;
