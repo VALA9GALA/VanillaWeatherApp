@@ -26,20 +26,27 @@ function displayTemperature(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.city;
+
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+
+  celTemp = Math.round(response.data.temperature.current);
   let mainTempElement = document.querySelector("#main-temp");
-  mainTempElement.innerHTML = Math.round(response.data.temperature.current);
+  mainTempElement.innerHTML = celTemp;
+
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
+
   let mainIconElement = document.querySelector("#main-icon");
   mainIconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   mainIconElement.setAttribute("alt", response.data.condition.description);
+
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.temperature.humidity;
+
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
 }
@@ -58,7 +65,34 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Brooklyn");
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let mainTempElement = document.querySelector("#main-temp");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrTemp = Math.round((celTemp * 9) / 5 + 32);
+  mainTempElement.innerHTML = fahrTemp;
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let mainTempElement = document.querySelector("#main-temp");
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  mainTempElement.innerHTML = celTemp;
+}
+
+let celTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+search("Brooklyn");

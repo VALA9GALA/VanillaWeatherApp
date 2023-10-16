@@ -104,14 +104,33 @@ body {
   font-weight: 400;
   color: rgb(98, 74, 186);
   opacity: 0.9;
+  position: relative;
+  top: 10px;
 }
 .weather-temperature .units {
   position: relative;
-  top: -34px;
+  top: -28px;
+  font-size: 14px;
 }
-#fahrenheit {
+#fahrenheit-link {
   text-decoration: none;
 }
+#fahrenheit-link.active {
+  color: black;
+  opacity: 0.8;
+  cursor: default;
+  text-decoration: none;
+}
+#celsius-link {
+  text-decoration: none;
+}
+#celsius-link.active {
+  color: black;
+  opacity: 0.8;
+  cursor: default;
+  text-decoration: none;
+}
+
 h1 {
   font-size: 24px;
   line-height: 28px;
