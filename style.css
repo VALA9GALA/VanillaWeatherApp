@@ -3,8 +3,8 @@ body {
   font-family: Arial, sans-serif;
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/419/original/into-column.gif?1697229223);
   background-repeat: no-repeat;
-  background-size: 890px;
-  background-position: 200px;
+  background-size: 910px;
+  background-position: 180px;
 }
 #love-eyes {
   width: 360px;
@@ -17,10 +17,10 @@ body {
   transition: 300ms ease-in-out;
 }
 #column {
-  height: 390px;
+  height: 293px;
   position: absolute;
-  top: 242px;
-  left: 380px;
+  top: 321px;
+  left: 450px;
 }
 #look-head {
   width: 300px;
@@ -40,7 +40,7 @@ body {
 .coded-by {
   opacity: 0.8;
   position: absolute;
-  margin: 0 190px;
+  margin: 87px 190px;
 }
 .weather-app-wrapper #valagala {
   text-decoration: none;
@@ -50,19 +50,7 @@ body {
   color: #752eaa;
 }
 .weather-app {
-  /*background: rgba(219, 99, 195, 0.74);
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(219, 99, 195, 0.74) 0%,
-    rgba(50, 224, 227, 0.71) 50%,
-    rgba(181, 171, 222, 0.5) 100%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(219, 99, 195, 0.74) 0%,
-    rgba(50, 224, 227, 0.71) 50%,
-    rgba(181, 171, 222, 0.5) 100%
-  );*/
+  margin-top: -20px;
   background: #eeeeee;
   background: -webkit-radial-gradient(
     circle,
