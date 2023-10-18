@@ -54,6 +54,7 @@
 
           <div class="overview">
             <h1 id="city"></h1>
+
             <ul>
               <li>
                 Last updated:
@@ -82,16 +83,18 @@
             </div>
             <div class="col-6">
               <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
+                <div class="hum-wind">
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </div>
               </ul>
             </div>
           </div>
 
-          <div class="forecast">
+          <div class="forecast" id="forecast">
             <div class="row">
               <div class="col-2">
-                <div class="forecast-date">Mon</div>
+                <div class="forecast-date"></div>
 
                 <img
                   src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
