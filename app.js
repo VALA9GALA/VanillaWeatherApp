@@ -22,6 +22,15 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "045ace03oteb7d0da03b1286fde00d59";
+  let units = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let cityElement = document.querySelector("#city");
@@ -49,8 +58,11 @@ function displayTemperature(response) {
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
+  getForecast(response.data.coordinates);
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -123,4 +135,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("Brooklyn");
-displayForecast();
