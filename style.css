@@ -1,6 +1,6 @@
 body {
   background-color: pink;
-  font-family: Arial, sans-serif;
+  font-family: monospace;
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/419/original/into-column.gif?1697229223);
   background-repeat: no-repeat;
   background-size: 910px;
@@ -18,9 +18,9 @@ body {
   transition: 300ms ease-in-out;
 }
 #column {
-  height: 293px;
+  height: 298px;
   position: absolute;
-  top: 328px;
+  top: 322px;
   left: 450px;
 }
 #look-head {
@@ -41,13 +41,14 @@ body {
 .coded-by {
   opacity: 0.8;
   position: absolute;
-  margin: -2px 190px;
+  margin: -2px 187px;
+  font-size: 18px;
 }
 .weather-app-wrapper #valagala {
+  font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   position: absolute;
-  margin-top: 2px;
   margin-left: 2px;
   color: #752eaa;
 }
@@ -77,8 +78,8 @@ body {
   box-shadow: 2px 4px 6px 2px rgba(98, 74, 186, 0.5);
 }
 #main-icon {
-  margin-top: -5px;
-  margin-left: 30px;
+  margin-top: -2px;
+  margin-left: 15px;
   width: 100px;
 }
 #main-icon:hover {
@@ -98,7 +99,7 @@ body {
 }
 .weather-temperature .units {
   position: relative;
-  top: -33px;
+  top: -28px;
   left: 3px;
   font-size: 18px;
   opacity: 0.8;
@@ -109,6 +110,7 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   color: rgb(98, 74, 186);
+  margin-top: -5px;
   margin-bottom: 0;
   margin-left: 10px;
 }
@@ -145,9 +147,11 @@ li {
 .forecast-date {
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: -3px;
 }
 .forecast-temp {
   font-size: 12px;
+  margin-bottom: -5px;
 }
 .forecast-temp-max {
   font-weight: 600;

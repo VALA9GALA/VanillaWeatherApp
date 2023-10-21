@@ -61,7 +61,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.temperature.humidity;
 
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed / 1.609);
 
   getForecast(response.data.coordinates);
 }
