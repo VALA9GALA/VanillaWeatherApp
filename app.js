@@ -10,16 +10,14 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
 
-  return `${day} ${hours}:${minutes}`;
+  let americanTime = date.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+
+  return `${day} ${americanTime}`;
 }
 
 function formatForecastDay(timestamp) {
@@ -32,7 +30,7 @@ function formatForecastDay(timestamp) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "045ace03oteb7d0da03b1286fde00d59";
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
@@ -46,9 +44,8 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.time * 1000);
 
-  celTemp = Math.round(response.data.temperature.current);
   let mainTempElement = document.querySelector("#main-temp");
-  mainTempElement.innerHTML = celTemp;
+  mainTempElement.innerHTML = Math.round(response.data.temperature.current);
 
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
@@ -64,7 +61,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.temperature.humidity;
 
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 
   getForecast(response.data.coordinates);
 }
@@ -111,7 +108,7 @@ function displayForecast(response) {
 function search(city) {
   let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
   let apiKey = "045ace03oteb7d0da03b1286fde00d59";
-  let units = "metric";
+  let units = "imperial";
   let apiUrl = `${apiEndpoint}query=${city}&key=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -122,34 +119,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let mainTempElement = document.querySelector("#main-temp");
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrTemp = Math.round((celTemp * 9) / 5 + 32);
-  mainTempElement.innerHTML = fahrTemp;
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let mainTempElement = document.querySelector("#main-temp");
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  mainTempElement.innerHTML = celTemp;
-}
-
-let celTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("Brooklyn");
