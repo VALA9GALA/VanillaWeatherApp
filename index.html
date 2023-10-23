@@ -10,7 +10,12 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c09fcaf3a9.js"
+      crossorigin="anonymous"
+    ></script>
     <title>VanillaWeather</title>
   </head>
   <body>
@@ -45,23 +50,28 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-info w-100"
+                  class="btn w-100"
                   id="search-btn"
                 />
               </div>
             </div>
           </form>
-
-          <div class="overview">
-            <h1 id="city"></h1>
-
-            <ul>
-              <li>
-                Last updated:
-                <span id="date"></span>
-              </li>
-              <em><li id="description"></li></em>
-            </ul>
+          <div class="row">
+            <div class="col-10">
+              <h1 id="city"></h1>
+              <ul>
+                <li>
+                  Last updated:
+                  <span id="date"></span>
+                </li>
+                <em><li id="description"></li></em>
+              </ul>
+            </div>
+            <div class="col-2">
+              <button class="location-btn">
+                <i class="fa-solid fa-location-dot"></i>
+              </button>
+            </div>
           </div>
           <div class="row">
             <div class="col-6">
