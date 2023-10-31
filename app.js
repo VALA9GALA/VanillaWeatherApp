@@ -122,4 +122,24 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+function getPositionWeather(position) {
+  console.log(position);
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
+  let apiKey = "045ace03oteb7d0da03b1286fde00d59";
+  let units = "imperial";
+  let apiUrl = `${apiEndpoint}lon=${lon}&lat=${lat}&key=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTemperature, displayForecast);
+}
+
+function getPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(getPositionWeather);
+}
+
+let locationButton = document.querySelector("#location-btn");
+locationButton.addEventListener("click", getPosition);
+
 search("Brooklyn");
