@@ -1,13 +1,22 @@
 body {
-  background-color: pink;
+  /*background-color: pink;*/
   font-family: monospace;
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/419/original/into-column.gif?1697229223);
+  /*background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/100/419/original/into-column.gif?1697229223);
   background-repeat: no-repeat;
   background-size: 910px;
-  background-position: 180px;
+  background-position: 180px;*/
+  background: #eeeeee;
+  background: -webkit-radial-gradient(
+    circle,
+    #eeeeee 0%,
+    #db51cf 100%,
+    #d7d7d7 50%
+  );
+  background: radial-gradient(circle, #eeeeee 0%, #db51cf 100%, #d7d7d7 50%);
+  /*background-repeat: no-repeat cover;*/
 }
 
-#love-eyes {
+/*#love-eyes {
   width: 360px;
   position: absolute;
   top: 240px;
@@ -32,7 +41,7 @@ body {
 #look-head:hover {
   transform: scale(1.2) rotate(-360deg);
   transition: 350ms ease-in-out;
-}
+}*/
 
 .weather-app-wrapper {
   max-width: 540px;
@@ -53,7 +62,9 @@ body {
   color: #752eaa;
 }
 .weather-app {
-  margin-top: -20px;
+  margin-top: 140px;
+
+  /* margin-top: -20px;*/
   background: #eeeeee;
   background: -webkit-radial-gradient(
     circle,
