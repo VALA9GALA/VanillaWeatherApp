@@ -27,7 +27,7 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form id="search-form" class="mb-3">
+          <form id="search-form" class="mb-3 d-flex justify-content-center">
             <div class="row">
               <div class="col-9">
                 <input
@@ -43,7 +43,7 @@
                 <input
                   type="submit"
                   value="Search"
-                  class="btn w-100"
+                  class="btn"
                   id="search-btn"
                 />
               </div>
@@ -52,7 +52,7 @@
           <div class="row">
             <div class="col-10">
               <h1 id="city"></h1>
-              <ul>
+              <ul class="sub-text">
                 <li>
                   Last updated:
                   <span id="date"></span>
@@ -109,7 +109,7 @@
             </div>
           </div>
         </div>
-        <div class="coded-by">
+        <div class="coded-by text-end me-5 pe-5">
           <small>
             Coded by
             <a

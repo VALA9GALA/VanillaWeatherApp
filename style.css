@@ -8,7 +8,6 @@ body {
     #d7d7d7 50%
   );
   background: radial-gradient(circle, #eeeeee 0%, #db51cf 100%, #d7d7d7 50%);
-
 }
 
 .weather-app-wrapper {
@@ -17,8 +16,6 @@ body {
 }
 .coded-by {
   opacity: 0.8;
-  position: absolute;
-  margin: -2px 187px;
   font-size: 18px;
 }
 .weather-app-wrapper #valagala {
@@ -31,8 +28,6 @@ body {
 }
 .weather-app {
   margin-top: 100px;
-
-  /* margin-top: -20px;*/
   background: #eeeeee;
   background: -webkit-radial-gradient(
     circle,
@@ -156,4 +151,43 @@ li {
 .forecast-temp-min {
   opacity: 0.8;
   font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .form-control,
+  .btn,
+  .sub-text li,
+  .weather-temperature .units,
+  .hum-wind li {
+    font-size: 14px;
+  }
+  .btn {
+    margin-left: -20px;
+  }
+  .location-btn {
+    margin-top: 5px;
+  }
+  .fa-location-dot {
+    font-size: 20px;
+  }
+  #date {
+    font-size: 12px;
+  }
+  #city {
+    font-size: 24px;
+  }
+  #main-icon {
+    width: 80px;
+    margin-left: -10px;
+  }
+  .weather-temperature strong {
+    font-size: 55px;
+  }
+  .weather-temperature .units {
+    position: relative;
+    top: -18px;
+  }
+  .hum-wind {
+    margin-left: 10px;
+  }
 }
