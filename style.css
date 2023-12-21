@@ -166,7 +166,7 @@ li {
   }
   .location-btn {
     margin-top: 5px;
-    padding: 3px;
+    padding: 3px 5px;
   }
   .fa-location-dot {
     font-size: 24px;
